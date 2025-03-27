@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angklung</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Font Awesome/css/all.min.css">
+    <link rel="icon" type="jpg" href="Image/Picsart_25-03-26_23-54-52-884.png">
+</head>
+<body>
+<div class="up">
+    <p class="name">Dzakira Zaafarani Sujadi (08)
+        <br>X BD</p>
+        <p class="tittle"><i class="fas fa-music"></i>Angklung Digital<i class="fas fa-music"></i></p>
+        <div class="logo"><img src="Image/Picsart_25-03-26_23-54-52-884.png" alt=""></div>
+</div>
+<div class="not">
+<button class="music-button" data-audio="Not/g1_DaAW12QQ.mp3">G1</button>
+<button class="music-button" data-audio="Not/a1_Dg5qOuhp.mp3">A1</button>
+<button class="music-button" data-audio="Not/b1_ACkj4kDc.mp3">B1</button>
+<button class="music-button" data-audio="Not/c2_THmqeKm4.mp3">C2</button>
+<button class="music-button" data-audio="Not/d2_He16xLr7.mp3">D2</button>
+<button class="music-button" data-audio="Not/e2_T0hnlWV9.mp3">E2</button>
+<button class="music-button" data-audio="Not/f2_0kqxrBpv.mp3">F2</button>
+<button class="music-button" data-audio="Not/g2_fR3GVeRr.mp3">G2</button>
+<button class="music-button" data-audio="Not/a2_jyLebbMd.mp3">A2</button>
+<button class="music-button" data-audio="Not/b2_ceb1SJFB.mp3">B2</button>
+<button class="music-button" data-audio="Not/c3_AFUmCs74.mp3">C3</button>
+<button class="music-button" data-audio="Not/d3_gF7KmiqC.mp3">D3</button>
+<button class="music-button" data-audio="Not/e3_4QqRplZs.mp3">E3</button>
+<button class="music-button" data-audio="Not/f3_fTymqYfD.mp3">F3</button>
+</div>
+<footer><img src="Image/1000079518.png" alt=""></footer>
+<script>
+    // Membuat elemen audio secara dinamis
+    const audio = new Audio();
+
+    // Ambil semua tombol dengan class 'music-button'
+    const buttons = document.querySelectorAll('.music-button');
+
+    buttons.forEach(button => {
+        const audioSrc = button.getAttribute('data-audio');
+
+        button.addEventListener('mousedown', () => {
+            audio.src = audioSrc;
+            audio.currentTime = 0; // Mulai dari awal saat tombol ditekan
+            audio.play();
+        });
+
+        button.addEventListener('mouseup', () => {
+            audio.pause();
+        });
+
+        // Untuk perangkat layar sentuh (mobile)
+        button.addEventListener('touchstart', () => {
+            audio.src = audioSrc;
+            audio.currentTime = 0;
+            audio.play();
+        });
+
+        button.addEventListener('touchend', () => {
+            audio.pause();
+        });
+    });
+</script>
+</body>
+</html>
