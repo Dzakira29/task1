@@ -20,12 +20,12 @@ body {
     font-size: 18px;
     outline: none;
     transition: background 0.3s ease;
-    height: 300px;
+    height: 350px;
     width: 50px;
     margin-left: 10px;
     margin-right: 10px;
     box-shadow: 0px 0px 10px black;
-
+    -webkit-tap-highlight-color: transparent;
 }
 
 .music-button:active {
@@ -83,7 +83,7 @@ footer img {
     }
     .tittle {
         font-size: 70px;
-        margin-right: 22%;
+        margin-right: 17%;
     }
     .logo img {
         width: 150px;
